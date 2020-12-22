@@ -10,8 +10,9 @@ public class StringCheck {
                 "서울시 구로구 개봉동"
         };
         
-        sample.checkAddress(addresses);
-        sample.containsAddress(addresses);
+        //sample.checkAddress(addresses);
+        //sample.containsAddress(addresses);
+        sample.checkMatch();
     }
 
     public void checkAddress(String[] addresses) {
@@ -40,5 +41,15 @@ public class StringCheck {
         }
         System.out.println("Contains " + containText + " count is " + containCount);
     }
-    
+
+    public void checkMatch() {
+        String text = "This is a text";
+        String compare1 = "is";
+        String compare2 = "this";
+        System.out.println(text.regionMatches(2, compare1, 0, 1)); // 매개변수가 4개인 regionMatches()
+        System.out.println(text.regionMatches(5, compare1, 0, 2)); // 매개변수가 4개인 regionMatches()
+        System.out.println(text.regionMatches(true, 0, compare2, 0, 4)); // 매개변수가 5개인 regionMatches()
+        // regionMatches(boolean ignoreCase, int toffset, String other, int ooffset, int len)
+        // 문자열 중 특정 영역이 매개변수로 넘어온 문자열과 동일한지 확인하는 메소드.
+    }
 }
