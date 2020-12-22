@@ -4,7 +4,8 @@ public class StringCompare {
     public static void main(String[] args) {
         StringCompare sample = new StringCompare();
         //sample.checkString();
-        sample.checkCompare();
+        //sample.checkCompare();
+        sample.checkCompareTo();
     }
 
     public void checkString() {
@@ -32,5 +33,24 @@ public class StringCompare {
         if (text.equalsIgnoreCase(text3)) {
             System.out.println("text.equalsIgnoreCase(text3) result is same.");
         }
+    }
+
+    public void checkCompareTo() {
+        // A.compareTo(B) : B를 기준으로 A의 위치를 알려줌. 리턴값이 양수 -> 리턴값만큼 A가 뒤에 있다 / 음수 -> 리턴값만큼 A가 앞에 있다.
+        String texta = "a";
+        String textA = "A";
+        String textb = "b";
+        String textC = "C";
+        String textc = "c";
+        String textZ = "Z";
+        String textz = "z";
+        System.out.println(textb.compareTo(texta));
+        System.out.println(textb.compareTo(textc));
+        System.out.println(texta.compareTo(textc));
+        System.out.println(texta.compareTo(texta));
+        System.out.println(textc.compareTo(textC));
+        System.out.println(texta.compareToIgnoreCase(textA));
+        System.out.println(textZ.compareTo(textz));
+
     }
 }
