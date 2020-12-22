@@ -12,7 +12,9 @@ public class StringCheck {
         
         //sample.checkAddress(addresses);
         //sample.containsAddress(addresses);
-        sample.checkMatch();
+        //sample.checkMatch();
+        //sample.checkIndexOf();
+        sample.checkLastIndexOf();
     }
 
     public void checkAddress(String[] addresses) {
@@ -51,5 +53,32 @@ public class StringCheck {
         System.out.println(text.regionMatches(true, 0, compare2, 0, 4)); // 매개변수가 5개인 regionMatches()
         // regionMatches(boolean ignoreCase, int toffset, String other, int ooffset, int len)
         // 문자열 중 특정 영역이 매개변수로 넘어온 문자열과 동일한지 확인하는 메소드.
+    }
+
+    public void checkIndexOf() {
+        String text = "Java technology is both a programming language and a platform.";
+        System.out.println(text.indexOf('a')); // char로 매개변수를 넘긴 경우
+        System.out.println(text.indexOf("a ")); // String으로 매개변수를 넘긴 경우
+        System.out.println(text.indexOf('a', 20)); // fromIndex : text문자열의 20번째 자리부터 값을 확인
+        System.out.println(text.indexOf("a ", 20));
+        System.out.println(text.indexOf('z')); // text에 없는 char를 찾는 경우
+        // indexOf(int ch, int fromIndex) 또는 indexOf(String str, int fromIndex)
+        // 매개변수로 char 또는 String을 넘겨 문자열 내에서 매개변수의 위치를 찾을 수 있다.
+        // fromIndex (생략가능): 문자열의 fromIndex번째 자리부터 시작해 앞에서부터 값을 찾는다
+        // 문자열에 그 값이 없다면 -1을 리턴한다.
+    }
+
+    public void checkLastIndexOf(){
+        String text = "Java technology is both a programming language and a platform.";
+        System.out.println(text.lastIndexOf('a')); // char로 매개변수를 넘긴 경우
+        System.out.println(text.lastIndexOf("a ")); // String으로 매개변수를 넘긴 경우
+        System.out.println(text.lastIndexOf('a', 20)); // fromIndex : text문자열의 20번째 자리부터 값을 확인
+        System.out.println(text.lastIndexOf("a ", 20));
+        System.out.println(text.lastIndexOf('z')); // text에 없는 char를 찾는 경우
+        // lastIndexOf(int ch, int fromIndex) 또는 lastIndexOf(String str, int fromIndex)
+        // 매개변수로 char 또는 String을 넘겨 문자열 내에서 매개변수의 위치를 찾을 수 있다
+        // indexOf()와 달리 뒤에서부터(오른쪽부터) 찾기 시작한다.
+        // fromIndex (생략가능): 문자열의 fromIndex번째 자리부터 시작해 뒤에서부터 값을 찾는다
+        // 문자열에 그 값이 없다면 -1을 리턴한다.
     }
 }
