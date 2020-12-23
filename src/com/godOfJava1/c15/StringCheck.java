@@ -148,5 +148,13 @@ public class StringCheck {
             System.out.println("[" + string.trim() + "]");
         }
         // trim() : 문자열의 맨 앞, 맨 뒤의 공백을 제거한 문자열을 리턴함.
+        
+        String text = " a "; 
+        if (text != null && text.trim().length() > 0) {
+            System.out.println("OK");
+        } 
+        // 공백을 제외한 char값이 하나라도 존재하는지 확인하는 코드. 반드시 null체크를 해야 한다(null이면 NullPointerException 발생)
     }
+    
+    
 }
