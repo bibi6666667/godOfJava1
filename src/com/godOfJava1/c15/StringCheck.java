@@ -15,7 +15,8 @@ public class StringCheck {
         //sample.checkMatch();
         //sample.checkIndexOf();
         //sample.checkLastIndexOf();
-        sample.charAt();
+        //sample.charAt();
+        sample.copyValueOf();
     }
 
     public void checkAddress(String[] addresses) {
@@ -87,5 +88,15 @@ public class StringCheck {
         String text = "Java technology is both a programming language and a platform.";
         System.out.println(text.charAt(5));
         // charAt() : 특정 인덱스의 char값을 리턴한다.
+    }
+
+    public void copyValueOf() {
+        char values[] = new char[] {'J', 'a', 'v', 'a'};
+        String java = String.copyValueOf(values); // 배열 전체를 문자열로 변환
+        String ava = String.copyValueOf(values, 1, 3); // values의 인덱스1부터 3길이만큼만 변환
+        System.out.println(java);
+        System.out.println(ava);
+        // copyValueOf() : char배열의 값을 문자열로 변환한다.
+        // 주의 : 이 메소드는 static메소드이기 때문에 static하게 호출하여 사용해야 한다 - String.copyValueOf() 의 형태로.
     }
 }
