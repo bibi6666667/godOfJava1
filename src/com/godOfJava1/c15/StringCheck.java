@@ -24,7 +24,8 @@ public class StringCheck {
         //sample.checkReplace();
         //sample.checkFormat();
         //sample.checkCase();
-        sample.checkValueOf();
+        //sample.checkValueOf();
+        sample.internCheck();
     }
 
     public void checkAddress(String[] addresses) {
@@ -206,5 +207,17 @@ public class StringCheck {
         // 기본 자료형 : boolean, char, char[], double, float, int, long, Object
         // valueOf()를 사용해 기본자료형->문자열로 변환해도 되지만, byte2처럼 다른 문자열과 합쳐서도 변환이 가능하다.
         // valueOf(Object obj) : valueOf()는 매개변수인 객체가 null일 때 "null"이라는 문자열을 리턴해준다. (NullPointerException 발생하지 않음)
+    }
+    
+    public void internCheck() {
+        String text1 = "Java Basic";
+        String text2 = "Java Basic";
+        String text3 = new String("Java Basic");
+        text3 = text3.intern(); // 억지로 문자열 풀에 값을 할당하는 메소드
+        System.out.println(text1 == text2);
+        System.out.println(text1 == text3); // intern() 있으면 true, 없으면 false
+        System.out.println(text1.equals(text3));
+        // intern() : new String(String str)으로 생성한 문자열 객체라 할지라도, 문자열 풀에 해당 값이 있으면 풀에 있는 값을 참조하는 객체를 리턴한다.
+        // intern()으로 문자열 연산이 빨라질 수는 있지만, 전체 자바 시스템 성능을 악화시킬 수 있으므로 사용하지 말자.
     }
 }
