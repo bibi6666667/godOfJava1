@@ -14,7 +14,8 @@ public class StringCheck {
         //sample.containsAddress(addresses);
         //sample.checkMatch();
         //sample.checkIndexOf();
-        sample.checkLastIndexOf();
+        //sample.checkLastIndexOf();
+        sample.charAt();
     }
 
     public void checkAddress(String[] addresses) {
@@ -68,7 +69,7 @@ public class StringCheck {
         // 문자열에 그 값이 없다면 -1을 리턴한다.
     }
 
-    public void checkLastIndexOf(){
+    public void checkLastIndexOf() {
         String text = "Java technology is both a programming language and a platform.";
         System.out.println(text.lastIndexOf('a')); // char로 매개변수를 넘긴 경우
         System.out.println(text.lastIndexOf("a ")); // String으로 매개변수를 넘긴 경우
@@ -80,5 +81,11 @@ public class StringCheck {
         // indexOf()와 달리 뒤에서부터(오른쪽부터) 찾기 시작한다.
         // fromIndex (생략가능): 문자열의 fromIndex번째 자리부터 시작해 뒤에서부터 값을 찾는다
         // 문자열에 그 값이 없다면 -1을 리턴한다.
+    }
+
+    public void charAt() {
+        String text = "Java technology is both a programming language and a platform.";
+        System.out.println(text.charAt(5));
+        // charAt() : 특정 인덱스의 char값을 리턴한다.
     }
 }
