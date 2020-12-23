@@ -19,7 +19,8 @@ public class StringCheck {
         //sample.copyValueOf();
         //sample.toCharArray();
         //sample.checkSubString();
-        sample.checkSplit();
+        //sample.checkSplit();
+        sample.checkTrim();
     }
 
     public void checkAddress(String[] addresses) {
@@ -136,5 +137,16 @@ public class StringCheck {
         // regex : regex의 정규 표현식에 맞추어 String을 잘라 String[]으로 리턴한다.
         // limit(생략가능) : 리턴값인 String[]의 최대 크기를 제한할 수 있다.
         // java.util.StringTokenizer 를 사용하는 방법도 있다.
+    }
+
+    public void checkTrim() {
+        String[] strings = new String[] {
+                " a", " b ", "   c", "d    ", "e   f", "   "
+        };
+        for(String string : strings) {
+            System.out.println("[" + string + "]");
+            System.out.println("[" + string.trim() + "]");
+        }
+        // trim() : 문자열의 맨 앞, 맨 뒤의 공백을 제거한 문자열을 리턴함.
     }
 }
