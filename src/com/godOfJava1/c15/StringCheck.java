@@ -20,7 +20,8 @@ public class StringCheck {
         //sample.toCharArray();
         //sample.checkSubString();
         //sample.checkSplit();
-        sample.checkTrim();
+        //sample.checkTrim();
+        sample.checkReplace();
     }
 
     public void checkAddress(String[] addresses) {
@@ -155,6 +156,18 @@ public class StringCheck {
         } 
         // 공백을 제외한 char값이 하나라도 존재하는지 확인하는 코드. 반드시 null체크를 해야 한다(null이면 NullPointerException 발생)
     }
-    
-    
+
+    public void checkReplace() {
+        String text = "The String class represents character strings.";
+        System.out.println(text.replace('s', 'z')); // text객체의 char를 변환
+        System.out.println(text); // replace가 원본 String을 변화시키지는 않는다.
+        System.out.println(text.replace("tring", "trike")); // CharSequence타입의 매개변수를 사용해 값을 변경
+        System.out.println(text.replaceAll(" ", "|")); // 정규표현식을 사용하는 replaceAll()의 예시
+        System.out.println(text.replaceFirst(" ", "|"));
+        // replace() 및 replace로 시작하는 메소드 : 문자열의 일부를 변경하는 메소드.
+        // 기존 문자열의 값은 바뀌지 않으며, 대소문자를 구분한다.
+        // replace(CharSequence A, CharSequence B) : 문자열에 있는 A를 B로 치환한다
+        // replaceAll(String regex, String replacement) : regex의 정규표현식에 포함된 모든 내용을 replacement로 치환한다.
+        // replaceFirst(String regex, String replacement) :  regex의 정규표현식에 포함되는 첫 번째 내용만 replacement로 치환한다.
+    }
 }
