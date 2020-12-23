@@ -21,7 +21,8 @@ public class StringCheck {
         //sample.checkSubString();
         //sample.checkSplit();
         //sample.checkTrim();
-        sample.checkReplace();
+        //sample.checkReplace();
+        sample.checkFormat();
     }
 
     public void checkAddress(String[] addresses) {
@@ -169,5 +170,17 @@ public class StringCheck {
         // replace(CharSequence A, CharSequence B) : 문자열에 있는 A를 B로 치환한다
         // replaceAll(String regex, String replacement) : regex의 정규표현식에 포함된 모든 내용을 replacement로 치환한다.
         // replaceFirst(String regex, String replacement) :  regex의 정규표현식에 포함되는 첫 번째 내용만 replacement로 치환한다.
+    }
+
+    public void checkFormat() {
+        String text = "제 이름은 %s입니다. 지금까지 %d권의 책을 썼고, 하루에 %f%%의 시간을 책을 쓰는 데 할애하고 있습니다.";
+        String realText = String.format(text, "이상민", 7, 10.5, "이건", "들어가나");
+        // String realText = String.format(text, "이상민", 7); // java.util.MissingFormatArgumentException 발생
+        System.out.println(realText);
+        // format(String format, Object... args) : format의 문자열 내용 중 변한해야 하는 부분을 args의 내용으로 변경한다.
+        // %s : String(문자열), %d : 정수형, %f : float, %% : % 를 의미함.
+        // format의 기준에 맞는 문자열을 args에 제시된 순서대로 치환한다.
+        // format보다 많은 args를 나열하는 것은 상관없지만, args를 모자라게 나열하면 MissingFormatArgumentException 예외가 발생한다.
+
     }
 }
