@@ -17,7 +17,8 @@ public class StringCheck {
         //sample.checkLastIndexOf();
         //sample.charAt();
         //sample.copyValueOf();
-        sample.toCharArray();
+        //sample.toCharArray();
+        sample.checkSubString();
     }
 
     public void checkAddress(String[] addresses) {
@@ -109,5 +110,19 @@ public class StringCheck {
         }
         // toCharArray() : 문자열을 char배열로 변환한다.
         // 모든 String 객체는 내부에 char배열을 포함한다.
+    }
+
+    public void checkSubString() {
+        String text = "Java technology";
+        String technology = text.substring(5);
+        System.out.println(technology);
+        // String tech = text.substring(5, 4); // error - endIndex에는 길이가 아닌 끝 인덱스번호를 할당해야.
+        String tech = text.substring(5, 9);
+        System.out.println(tech);
+        // substring(int beginIndex, int endIndex) : 문자열 일부 값을 잘라내는 메소드
+        // beginIndex : 잘라낼 시작 인덱스.
+        // endIndex(생략가능) : 잘라낼 끝 인덱스. 생략하면 beginIndex부터 문자열 끝까지 잘라냄
+        // endIndex는 beginIndex + 잘라낼 문자 길이 로 구하는 것이 편하다.
+
     }
 }
