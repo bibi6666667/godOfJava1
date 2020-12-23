@@ -16,7 +16,8 @@ public class StringCheck {
         //sample.checkIndexOf();
         //sample.checkLastIndexOf();
         //sample.charAt();
-        sample.copyValueOf();
+        //sample.copyValueOf();
+        sample.toCharArray();
     }
 
     public void checkAddress(String[] addresses) {
@@ -98,5 +99,15 @@ public class StringCheck {
         System.out.println(ava);
         // copyValueOf() : char배열의 값을 문자열로 변환한다.
         // 주의 : 이 메소드는 static메소드이기 때문에 static하게 호출하여 사용해야 한다 - String.copyValueOf() 의 형태로.
+    }
+
+    public void toCharArray() {
+        String java = "Java";
+        char[] javaArr = java.toCharArray();
+        for (char aJava : javaArr) {
+            System.out.println(aJava);
+        }
+        // toCharArray() : 문자열을 char배열로 변환한다.
+        // 모든 String 객체는 내부에 char배열을 포함한다.
     }
 }
