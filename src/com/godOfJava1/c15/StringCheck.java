@@ -22,7 +22,8 @@ public class StringCheck {
         //sample.checkSplit();
         //sample.checkTrim();
         //sample.checkReplace();
-        sample.checkFormat();
+        //sample.checkFormat();
+        sample.checkCase();
     }
 
     public void checkAddress(String[] addresses) {
@@ -177,10 +178,20 @@ public class StringCheck {
         String realText = String.format(text, "이상민", 7, 10.5, "이건", "들어가나");
         // String realText = String.format(text, "이상민", 7); // java.util.MissingFormatArgumentException 발생
         System.out.println(realText);
-        // format(String format, Object... args) : format의 문자열 내용 중 변한해야 하는 부분을 args의 내용으로 변경한다.
-        // %s : String(문자열), %d : 정수형, %f : float, %% : % 를 의미함.
+        // format(Locale l, String format, Object... args) : format의 문자열 내용 중 변한해야 하는 부분을 args의 내용으로 변경한다.
+        // locale(생략가능) : 지정한 지역 정보에 맞추어 대소문자 변경.
+        // format에서  %s : String(문자열), %d : 정수형, %f : float, %% : % 를 의미함.
         // format의 기준에 맞는 문자열을 args에 제시된 순서대로 치환한다.
         // format보다 많은 args를 나열하는 것은 상관없지만, args를 모자라게 나열하면 MissingFormatArgumentException 예외가 발생한다.
+    }
 
+    public void checkCase() {
+        String text = "Upper Case and Lower Case";
+        System.out.println(text);
+        System.out.println(text.toLowerCase());
+        System.out.println(text.toUpperCase());
+        // toUpperCase(Locale locale) : 모든 문자열의 내용을 대문자로 변경한다.
+        // toLowerCase(Locale locale) : 모든 문자열의 내용을 소문자로 변경한다.
+        // locale(생략가능) : 지정한 지역 정보에 맞추어 대소문자 변경.
     }
 }
