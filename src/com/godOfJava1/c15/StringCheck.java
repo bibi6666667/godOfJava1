@@ -18,7 +18,8 @@ public class StringCheck {
         //sample.charAt();
         //sample.copyValueOf();
         //sample.toCharArray();
-        sample.checkSubString();
+        //sample.checkSubString();
+        sample.checkSplit();
     }
 
     public void checkAddress(String[] addresses) {
@@ -123,6 +124,17 @@ public class StringCheck {
         // beginIndex : 잘라낼 시작 인덱스.
         // endIndex(생략가능) : 잘라낼 끝 인덱스. 생략하면 beginIndex부터 문자열 끝까지 잘라냄
         // endIndex는 beginIndex + 잘라낼 문자 길이 로 구하는 것이 편하다.
+    }
 
+    public void checkSplit() {
+        String text = "Java technology is both a programming language and a platform";
+        String[] splitArray = text.split(" ");
+        for (String temp : splitArray) {
+            System.out.println(temp);
+        }
+        // split(String regex, int limit) : 문자열을 여러 개의 String배열로 나누는 메소드
+        // regex : regex의 정규 표현식에 맞추어 String을 잘라 String[]으로 리턴한다.
+        // limit(생략가능) : 리턴값인 String[]의 최대 크기를 제한할 수 있다.
+        // java.util.StringTokenizer 를 사용하는 방법도 있다.
     }
 }
