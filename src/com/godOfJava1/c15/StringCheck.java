@@ -23,7 +23,8 @@ public class StringCheck {
         //sample.checkTrim();
         //sample.checkReplace();
         //sample.checkFormat();
-        sample.checkCase();
+        //sample.checkCase();
+        sample.checkValueOf();
     }
 
     public void checkAddress(String[] addresses) {
@@ -193,5 +194,17 @@ public class StringCheck {
         // toUpperCase(Locale locale) : 모든 문자열의 내용을 대문자로 변경한다.
         // toLowerCase(Locale locale) : 모든 문자열의 내용을 소문자로 변경한다.
         // locale(생략가능) : 지정한 지역 정보에 맞추어 대소문자 변경.
+    }
+
+    public void checkValueOf() {
+        byte b = 1;
+        String byte1 = String.valueOf(b);
+        String byte2 = b + "";
+        System.out.println(byte1);
+        System.out.println(byte2);
+        // valueOf() : 기본 자료형을 문자열로 변환하는 메소드.
+        // 기본 자료형 : boolean, char, char[], double, float, int, long, Object
+        // valueOf()를 사용해 기본자료형->문자열로 변환해도 되지만, byte2처럼 다른 문자열과 합쳐서도 변환이 가능하다.
+        // valueOf(Object obj) : valueOf()는 매개변수인 객체가 null일 때 "null"이라는 문자열을 리턴해준다. (NullPointerException 발생하지 않음)
     }
 }
