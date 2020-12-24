@@ -5,7 +5,7 @@ public class UseStringMethods {
         UseStringMethods thisClass = new UseStringMethods();
 
         String str = "The String class represents character strings.";
-        
+
         thisClass.printWords(str);
         thisClass.findString(str, "string");
         thisClass.findAnyCaseString(str, "string");
@@ -21,14 +21,19 @@ public class UseStringMethods {
     }
 
     public void findString(String str, String findStr) {
-        int index = str.indexOf(findStr);
-        System.out.println(findStr + " is appeared at " + index);
+        int idx = str.indexOf(findStr);
+        if (idx != -1) { // findStr에 str가 없을 때는 출력하지 않음.
+            System.out.println(findStr + " is appeared at " + idx);
+        }
     }
 
     public void findAnyCaseString(String str, String findStr) {
         String lowerCaseStr = str.toLowerCase();
-        int index = lowerCaseStr.indexOf(findStr);
-        System.out.println(findStr + " is appeared at " + index);
+        String lowerCaseFindStr = findStr.toLowerCase(); // 대상 문장도, 대상 단어도 소문자로 바꿔야.
+        int idx = lowerCaseStr.indexOf(lowerCaseFindStr); // 소문자로 바꾼 문장에서 소문자로 바꾼 단어 찾기
+        if (idx != -1) { // findStr에 str가 없을 때는 출력하지 않음.
+            System.out.println(findStr + " is appeared at " + idx);
+        }
     }
 
     public void countChar(String str, char c) {
