@@ -25,7 +25,8 @@ public class StringCheck {
         //sample.checkFormat();
         //sample.checkCase();
         //sample.checkValueOf();
-        sample.internCheck();
+        //sample.internCheck();
+        sample.StringBufferStringBuilder();
     }
 
     public void checkAddress(String[] addresses) {
@@ -219,5 +220,25 @@ public class StringCheck {
         System.out.println(text1.equals(text3));
         // intern() : new String(String str)으로 생성한 문자열 객체라 할지라도, 문자열 풀에 해당 값이 있으면 풀에 있는 값을 참조하는 객체를 리턴한다.
         // intern()으로 문자열 연산이 빨라질 수는 있지만, 전체 자바 시스템 성능을 악화시킬 수 있으므로 사용하지 말자.
+    }
+
+    public void StringBufferStringBuilder(){
+        String text = "Hello";
+        text = text + " world";
+        System.out.println(text);
+        // String은 immutable한 객체이다. 한 번 만들어지면 더 이상 그 값을 바꿀 수 없다.
+        // 위와 같이 문자열을 더할 경우, "Hello"라는 String객체는 더 이상 사용되지 않는다.(GC의 대상이 된다)
+        // 왜? 기존 String을 수정해서 쓰는 것이 아니라, 매번 새로운 객체를 만들어 쓰기 때문.
+        StringBuilder sb = new StringBuilder();
+        sb.append("Hello");
+        sb.append(" world");
+        System.out.println(sb);
+        // String의 불변성을 보완하기 위해 나온 클래스가 StringBuilder 와 StringBuffer 이다. 제공하는 메소드는 두 클래스가 동일하다.
+        // 이 클래스는 문자열을 더하더라도 새로운 객체를 생성하지 않는다.
+        // StringBuffer는 Thread safe한 대신 속도는 더 느리다. - 인스턴스 변수 또는 여러 쓰레드에서 해당 문자열을 사용할 때.
+        // StringBuilder는 Thread safe 하지 않은 대신 속도가 더 빠르다. - 하나의 메소드 내에서 문자열 생성 및 더할 때.
+        // append() : StringBuffer, StringBuilder에서 더하기(+)대신 쓰이는 메소드. 기본타입과 참조타입 모두 사용 가능하다.
+
+
     }
 }
