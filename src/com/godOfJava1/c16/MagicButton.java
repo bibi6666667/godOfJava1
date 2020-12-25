@@ -12,7 +12,7 @@ public class MagicButton {
     }
     public void onClickProcess() {
         if (listener != null) { // listener가 null이 아닐 때만.
-            listener.onClick();
+            //listener.onClick();
         }
     }
 }
