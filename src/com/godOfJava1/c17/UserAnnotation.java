@@ -6,6 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD) // @Target : 어노테이션 사용 대상 지정. METHOD - 메소드에 사용 가능.
+// @Target({ElementType.METHOD, ElementType.TYPE) - 클래스,생성자에서도 이 어노테이션을 사용할 수 있게 지정. 중괄호와 콤마 사용.
 @Retention(RetentionPolicy.RUNTIME) // @Retention : 어노테이션 유지 정보를 지정. RUNTIME - 실행 시 이 어노테이션을 참조.
 public @interface UserAnnotation { // class나 interface처럼, 어노테이션을 선언하는 예약어. 이렇게 선언해야 @UserAnnotation을 사용가능함.
     public int number();
